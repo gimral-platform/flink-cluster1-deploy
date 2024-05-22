@@ -3,10 +3,6 @@ kind: Component
 metadata:
   name: flink-cluster1
   description: Flink Cluster
-  labels:
-    entity:
-      - uae
-      - ksa
 spec:
   type: flink-cluster
   lifecycle: production
