@@ -1,0 +1,16 @@
+apiVersion: flink.apache.org/v1beta1
+kind: FlinkSessionJob
+metadata:
+  name: flink-app1-job
+spec:
+  clusterId: flink-cluster1
+  job:
+    jarURI: file:///artifacts/flink-app1-1.0.0.jar
+    entryClass: org.example.kafkaoffset.NoKafkaOperatorApp
+      #fasterCopy needs to be set in the application
+    args: 
+      - --runner=FlinkRunner
+      - --kafkaBrokers=kafka-1-headless.kafka.svc.cluster.local:9092
+      - --checkpointingInterval=10000
+    parallelism: 1
+    upgradeMode: stateless

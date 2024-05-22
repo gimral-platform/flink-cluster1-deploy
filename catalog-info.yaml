@@ -1,14 +1,17 @@
-# apiVersion: backstage.io/v1alpha1
-# kind: Component
-# metadata:
-#   name: jenkins-ci
-#   description: Jenkins CI Deployment
-#   labels:
-#     entity: A
-# spec:
-#   type: service
-#   lifecycle: production
-#   owner: RTS
-#   system: RTS-CICD
-#   dependsOn:
-#     - component:jenkins-ansible-collection
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: flink-cluster1
+  description: Flink Cluster
+  labels:
+    entity:
+      - uae
+      - ksa
+spec:
+  type: flink-cluster
+  lifecycle: production
+  owner: RTS
+  system: RTS-CICD
+  dependsOn:
+    - component:flink-app1
+    - component:flink-app2
