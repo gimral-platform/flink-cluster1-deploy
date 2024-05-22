@@ -1,0 +1,14 @@
+# apiVersion: backstage.io/v1alpha1
+# kind: Component
+# metadata:
+#   name: jenkins-ci
+#   description: Jenkins CI Deployment
+#   labels:
+#     entity: A
+# spec:
+#   type: service
+#   lifecycle: production
+#   owner: RTS
+#   system: RTS-CICD
+#   dependsOn:
+#     - component:jenkins-ansible-collection
